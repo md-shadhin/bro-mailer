@@ -1,4 +1,4 @@
-import { toPersons } from "./config.dev";
+import { toPersons } from "./config";
 import Swal from 'sweetalert2'
 
 export async function sendEmail(type: string, body: string | null) {
