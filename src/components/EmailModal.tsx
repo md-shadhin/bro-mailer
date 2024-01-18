@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { toPersons, ccPersons } from '../config.dev';
+import { toPersons, ccPersons } from '../config';
 
 interface EmailModalProps {
     isModalOpen: boolean;
@@ -24,7 +24,6 @@ const EmailModal: React.FC<EmailModalProps> = (props) => {
         const person = toPersons.find((item) => item.key + 'Radio' === selectedToEmail)?.person;
         const text = person?.name.split(' ')[0];
         localStorage.setItem('toName', text || '');
-        props.setDearLabelValue(text);
 
     }, [selectedToEmail]);
 

@@ -6,12 +6,19 @@ import TypeToolbar from './components/TypeToolbar';
 import EmailModal from './components/EmailModal';
 import LeaveForm from './components/LeaveForm';
 import { sendEmail } from './actions';
+import { toPersons } from './config'
 
 function App() {
 
   const [selectedType, setSelectedType] = useState<string>(localStorage.getItem('leaveType') || 'radioEarlyLeave');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [dearLabel, setDearLabel] = useState<string | undefined>('Select');
+  const [dearLabel, setDearLabel] = useState<string | undefined>(() => {
+
+    const storedData = localStorage.getItem('toName');
+    const personName = toPersons.find((item) => item.key + 'Radio' === 'firstToEmailRadio')?.person?.name.split(' ')[0];
+
+    return storedData ? storedData : personName;
+  });
 
   const [tokenClient, setTokenClient] = useState<any>(null); // Adjust the type as needed
   const [gapiInited, setGapiInited] = useState<boolean>(false);
