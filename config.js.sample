@@ -1,0 +1,33 @@
+const toPersons = [
+    {
+        'key': 'firstToEmail',
+        'person': {
+            'name': '',
+            'email': ''
+        }
+    },
+    {
+        'key': 'secondToEmail',
+        'person': {
+            'name': '',
+            'email': ''
+        }
+    }
+];
+
+const ccPersons = [
+    {
+        'key': 'firstCcEmail',
+        'person': {
+            'name': '',
+            'email': ''
+        }
+    },
+    {
+        'key': 'secondCcEmail',
+        'person': {
+            'name': '',
+            'email': ''
+        }
+    }
+];

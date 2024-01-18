@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/page.css?v=2">
+    <link rel="stylesheet" href="css/modal.css?v=1">
+
+    <title>Bro Mailer</title>
+
+</head>
+
+<body translate="no">
+
+    <div id="modal">
+        <fieldset id="toCards" class="checkbox-group">
+            <legend class="checkbox-group-legend">To</legend>
+        </fieldset>
+
+        <fieldset id="ccCards" class="checkbox-group">
+            <legend class="checkbox-group-legend">CC</legend>
+        </fieldset>
+
+    </div>
+
+    <div class="wrapper">
+        
+        <div class="type-toolbar">
+            <input type="radio" id="radioEarlyLeave" name="type" checked>
+            <label for="radioEarlyLeave">Early Leave Mail</label>
+        
+            <input type="radio" id="radioPlannedLeave" name="type">
+            <label for="radioPlannedLeave">Planned Leave Mail</label>
+            
+        </div>
+
+        <form id="earlyLeave" class="form__contact">
+            <fieldset>
+                <p>Dear [<span class="form__field field--dear" id="dear"></span>] Bhai,</p>
+                <p>I trust this message finds you well. I am writing to request your approval for an early leave
+                    on <span class="form__field field--date" data-placeholder="[date]" tabindex="1"
+                        contenteditable></span>
+                    at <span class="form__field field--time" data-placeholder="[time]" tabindex="2"
+                        contenteditable></span>
+                    due to <span class="form__field field--reason" data-placeholder="[mention the reason]" tabindex="3"
+                        contenteditable></span>.
+                    I have ensured that all my pending tasks are up to date, and I will make sure to complete any
+                    outstanding work before my departure.
+                </p>
+                <p>
+                    I appreciate your understanding and consideration of this request. I look forward to your approval
+                    and am willing to discuss this further if necessary.
+                </p>
+                <p>Best Regards,<br />
+                    <span class="form__field field--name" data-placeholder="[Engineer Name]" tabindex="4"
+                        contenteditable></span>
+
+                </p>
+                <button type="submit" class="button button--xlarge" tabindex="5">Send
+                    Email &#187;</button>
+            </fieldset>
+        </form>
+
+        <form id="plannedLeave" style="display: none;" class="form__contact">
+            <fieldset>
+                <p>Dear [<span class="form__field field--dearPL" id="dearPL"></span>] Bhai,</p>
+                <p>I trust this message finds you well. I am writing to request your approval for a planned leave
+                    on <span class="form__field field--datePL" data-placeholder="[date]" tabindex="1"
+                        contenteditable></span>
+                    due to <span class="form__field field--reasonPL" data-placeholder="[mention the reason]"
+                        tabindex="2" contenteditable></span>.
+                    I have ensured that all my pending tasks are up to date, and I will make sure to complete any
+                    outstanding work before my departure.
+                </p>
+                <p>
+                    I appreciate your understanding and consideration of this request. I look forward to your approval
+                    and am willing to discuss this further if necessary.
+                </p>
+                <p>Best Regards,<br />
+                    <span class="form__field field--namePL" data-placeholder="[Engineer Name]" tabindex="3"
+                        contenteditable></span>
+
+                </p>
+                <button type="submit" class="button button--xlarge" tabindex="4">Send
+                    Email &#187;</button>
+            </fieldset>
+        </form>
+        <!-- <button onclick="handleSignoutClick()" class="button button--xlarge" tabindex="5">Sign out</button> -->
+    </div>
+
+    <script src="config.js?v=1"></script>
+    <script src="js/script.js?v=1"></script>
+    <script src="js/modal.js?v=1"></script>
+    <script src="js/email.js?v=5"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+
+</html>
