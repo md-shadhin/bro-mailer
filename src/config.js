@@ -1,4 +1,4 @@
-const toPersons = [
+export const toPersons = [
     {
         'key': 'firstToEmail',
         'person': {
@@ -30,7 +30,7 @@ const toPersons = [
 
 ]
 
-const ccPersons = [
+export const ccPersons = [
 
     {
         'key': 'firstCcEmail',
