@@ -10,12 +10,12 @@ interface LeaveFormProps {
 
 const LeaveForm: React.FC<LeaveFormProps> = (props) => {
 
-    const form1 = document.getElementById('earlyLeave');
-    const form2 = document.getElementById('plannedLeave');
-
-
     useEffect(() => {
+        const form1 = document.getElementById('earlyLeave');
+        const form2 = document.getElementById('plannedLeave');
+
         const id = props.selectedType;
+        console.log('sks', id)
         if (id === 'radioEarlyLeave') {
             if (form1) form1.style.display = 'block';
             if (form2) form2.style.display = 'none';
@@ -23,7 +23,7 @@ const LeaveForm: React.FC<LeaveFormProps> = (props) => {
             if (form1) form1.style.display = 'none';
             if (form2) form2.style.display = 'block';
         }
-    }, [props.selectedType, form1, form2]);
+    }, [props.selectedType]);
 
     const setDefaultValues = (inputName: string, defaultValue = '') => {
         const element = document.querySelector(`.form__field.field--${inputName}`);
