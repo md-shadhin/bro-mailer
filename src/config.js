@@ -1,3 +1,6 @@
+export const configVersion = "1"
+export const updateCCIndex = 4
+
 export const toPersons = [
     {
         'key': 'firstToEmail',
@@ -59,7 +62,14 @@ export const ccPersons = [
             'name': 'Golam Faysal',
             'email': 'faysal.ahmed@brotecs.com'
         }
-    }
+    },
+    {
+        'key': 'fifthCcEmail',
+        'person': {
+            'name': 'Ohidul Islam',
+            'email': 'ohidul.islam@brotecs.com'
+        }
+    },
 
 ]
 

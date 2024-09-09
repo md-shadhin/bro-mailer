@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { toPersons, ccPersons } from '../config';
+import { toPersons, ccPersons, configVersion, updateCCIndex } from '../config';
 
 interface EmailModalProps {
     isModalOpen: boolean;
@@ -9,12 +9,44 @@ interface EmailModalProps {
 
 const EmailModal: React.FC<EmailModalProps> = (props) => {
 
+    const mergeCCEmails = (storedCCEmails: string[], configCCEmails: string[], updateCCIndex: number): string[] => {
+        
+        return [...storedCCEmails, ...configCCEmails.slice(updateCCIndex)];
+    };
+
     const [selectedToEmail, setSelectedToEmail] = useState<string>(localStorage.getItem('toEmail') || 'firstToEmailRadio');
 
 
     const [selectedCcEmails, setSelectedCcEmails] = useState<string[]>(() => {
-        const storedData = localStorage.getItem('ccEmails');
-        return storedData ? JSON.parse(storedData) : Array.from(ccPersons).map(cb => cb.person.email);
+
+        const configCCEmails = Array.from(ccPersons).map(cb => cb.person.email);
+
+        const storedCCData = localStorage.getItem('ccEmails');
+
+        if(storedCCData){
+            const storedCCEmails = JSON.parse(storedCCData);
+
+            const storedVersion = localStorage.getItem('configVersion');
+
+            if (storedVersion !== configVersion) {
+                
+                const mergedEmails = mergeCCEmails(storedCCEmails, configCCEmails, updateCCIndex);
+    
+                localStorage.setItem('ccEmails', JSON.stringify(mergedEmails));
+                localStorage.setItem('configVersion', configVersion);
+
+                return mergedEmails;
+            }
+            
+        
+            return storedCCEmails;
+            
+            
+        }
+        else{
+            localStorage.setItem('configVersion', configVersion);
+            return configCCEmails;
+        }
     });
 
 

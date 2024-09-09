@@ -1,3 +1,6 @@
+export const configVersion = "1"
+export const updateCCIndex = 0
+
 const toPersons = [
     {
         'key': 'firstToEmail',
