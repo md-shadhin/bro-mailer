@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bro-mailer/static/css/main.8f763b6a.css",
-    "main.js": "/bro-mailer/static/js/main.d9acd201.js",
+    "main.js": "/bro-mailer/static/js/main.db23fb1f.js",
     "static/js/787.0d55faa8.chunk.js": "/bro-mailer/static/js/787.0d55faa8.chunk.js",
     "index.html": "/bro-mailer/index.html",
     "main.8f763b6a.css.map": "/bro-mailer/static/css/main.8f763b6a.css.map",
-    "main.d9acd201.js.map": "/bro-mailer/static/js/main.d9acd201.js.map",
+    "main.db23fb1f.js.map": "/bro-mailer/static/js/main.db23fb1f.js.map",
     "787.0d55faa8.chunk.js.map": "/bro-mailer/static/js/787.0d55faa8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8f763b6a.css",
-    "static/js/main.d9acd201.js"
+    "static/js/main.db23fb1f.js"
   ]
 }
